@@ -327,17 +327,94 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 .footer-inner{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
-.nav-links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;bottom:0;background:var(--bg);padding:24px;gap:4px;overflow-y:auto}
-.nav-links.open{display:flex}
+/* Nav */
+.nav-links{display:none!important;flex-direction:column;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(10,12,16,.98);padding:24px;gap:8px;overflow-y:auto;z-index:9999;backdrop-filter:blur(20px)}
+.nav-links.open{display:flex!important;flex-direction:column}
 .nav-mobile{display:block}
-.hero{min-height:auto;padding-top:100px;padding-bottom:48px}
+.nav-link{padding:14px 16px;font-size:16px;border-bottom:1px solid var(--border);width:100%;color:var(--t1)}
+.nav-cta{display:block;width:100%;text-align:center;margin:8px 0 4px;padding:14px 24px;border-radius:10px;margin-left:0;font-size:15px}
+.nav-login{display:block;width:100%;text-align:center;margin:4px 0;padding:14px 24px;border-radius:10px;margin-left:0;font-size:15px}
+/* Hero */
+.hero{min-height:auto;padding:100px 20px 48px}
+.hero h1{font-size:clamp(32px,8vw,48px)}
+.hero-sub{font-size:15px;max-width:100%}
+.hero-actions{flex-direction:column;align-items:stretch;gap:10px}
+.hero-actions .btn-p,.hero-actions .btn-s{width:100%;text-align:center;padding:14px 20px}
+.hero-badge{font-size:10.5px;padding:6px 14px}
+/* Carousel — the key fix */
+.carousel-wrap{overflow:visible}
+.carousel-track{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;gap:12px;cursor:default;padding-bottom:4px}
+.carousel-track::-webkit-scrollbar{display:none}
+.c-card{flex:0 0 85vw!important;max-width:340px;scroll-snap-align:start;opacity:1!important;transform:none!important}
+.carousel-arrows{display:none}
+.carousel-nav{justify-content:center}
+/* Mockup */
+.hero-mockup::before{display:none}
+.win{border-radius:10px}
+.win-bar{padding:10px 14px}
+.win-body{padding:12px}
+.win-url{display:none}
+.db-greeting{font-size:16px}
+.db-stats{grid-template-columns:repeat(2,1fr)}
+.db-stat-n{font-size:14px}
+.db-stat-l{font-size:7.5px}
+/* Sections */
+.sec{padding:48px 0}
+.sec-inner{padding:0 16px}
+.sec-title{font-size:clamp(26px,7vw,38px)}
+.sec-desc{font-size:14px;max-width:100%}
+.sec-label{font-size:10px}
+.sec-grid{grid-template-columns:1fr;gap:32px}
+/* Grids */
 .segments{grid-template-columns:1fr}
+.pillars{grid-template-columns:1fr}
+.pillar{padding:24px 18px}
+.p-title{font-size:22px}
+.p-desc{font-size:12.5px}
 .cta-form{grid-template-columns:1fr}
-.hero-actions{flex-direction:column;align-items:stretch}
-.footer-inner{grid-template-columns:1fr}
-.sticky-bar{flex-direction:column;gap:10px;text-align:center}
-.rep-table,.cmp-table{font-size:11px}
-.rep-table th,.rep-table td,.cmp-table th,.cmp-table td{padding:8px 6px}
+.footer-inner{grid-template-columns:1fr;gap:32px}
+.footer-bottom{flex-direction:column;gap:8px;text-align:center}
+/* CTA / Pricing */
+.cta-card{padding:28px 20px;border-radius:14px}
+.cta-price{font-size:52px}
+.cta-price span{font-size:20px}
+.cta-trust{gap:12px}
+.cta-trust span{font-size:10.5px}
+/* Sticky bar */
+.sticky-bar{flex-direction:column;gap:10px;text-align:center;padding:12px 16px}
+.sticky-bar .btn-p{width:100%}
+.sticky-bar-text{font-size:13px}
+.sticky-bar-text span{display:block;margin-left:0;margin-top:2px}
+/* Tables */
+.rep-table,.cmp-table{font-size:10px;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.rep-table th,.rep-table td,.cmp-table th,.cmp-table td{padding:8px 6px;white-space:nowrap}
+/* Cards in non-carousel contexts */
+.c-card[style*="flex:none"]{width:100%!important}
+/* SMS / chat */
+.bubble{max-width:92%;font-size:11.5px}
+.sms-h{padding:10px 14px}
+.sms-body{padding:10px 14px}
+.feat-row{font-size:13px}
+.seg{padding:20px 16px}
+.seg-n{font-size:24px}
+.ticker-item{font-size:11px}
+}
+/* Small phones */
+@media(max-width:480px){
+.nav{height:60px;padding:0 12px}
+.nav-fulllogo{height:26px}
+.nav-links{top:60px!important}
+.hero{padding-top:76px}
+.hero h1{font-size:clamp(28px,8vw,40px)}
+.sec-title{font-size:clamp(24px,7vw,32px)}
+.sec{padding:40px 0}
+.sec-inner{padding:0 12px}
+.c-card{flex:0 0 90vw!important}
+.cta-card{padding:24px 16px}
+.cta-price{font-size:44px}
+.pillar{padding:20px 14px}
+.win-body{padding:10px}
+.footer{padding:48px 12px 24px}
 }
 </style>
 </head>
@@ -2627,17 +2704,27 @@ nav.appendChild(dotsWrap);
 nav.appendChild(arrowsWrap);
 wrap.appendChild(nav);
 
+const isMobile = () => window.innerWidth <= 768;
+
 function goToSlide(i) {
 pos = i;
+if (isMobile()) {
+// On mobile, scroll to card instead of transforming
+const scrollTo = pos * (cards[0].offsetWidth + gap);
+track.scrollTo({ left: scrollTo, behavior: 'smooth' });
+} else {
 track.style.transform = `translateX(-${pos * getCardW()}px)`;
+}
 dotsWrap.querySelectorAll('.carousel-dot').forEach((d, idx) => {
 d.classList.toggle('active', idx === pos);
 });
-// Highlight active card
+// Highlight active card (skip on mobile — CSS handles it)
+if (!isMobile()) {
 cards.forEach((c, idx) => {
 c.style.opacity = idx === pos ? '1' : '.55';
 c.style.transform = idx === pos ? 'translateY(-4px)' : 'translateY(0)';
 });
+}
 }
 
 // Set initial state
