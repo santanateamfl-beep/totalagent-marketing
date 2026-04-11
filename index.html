@@ -21,7 +21,7 @@
 --gn:#22C55E;--am:#F59E0B;--rd:#EF4444;--bl:#3B82F6;--pu:#A855F7;
 --wh:#FFFFFF;--t1:#C5C8D4;--t2:#8A8FA3;--t3:#5A5F73;--bh:#2A2E42;
 }
-html{scroll-behavior:smooth;background:var(--bg)}
+html{scroll-behavior:smooth;background:var(--bg);overflow-x:hidden}
 body{font-family:var(--body);background:var(--bg);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
 img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 
@@ -133,7 +133,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 .sec-cta:hover{gap:12px}
 
 /* ── CAROUSEL ── */
-.carousel-wrap{position:relative;margin-top:48px;overflow:hidden}
+.carousel-wrap{position:relative;margin-top:48px;overflow:hidden;max-width:100%}
 .carousel-track{display:flex;gap:16px;transition:transform .45s var(--ease);cursor:grab}
 .carousel-track:active{cursor:grabbing}
 .carousel-nav{display:flex;align-items:center;gap:8px;margin-top:20px}
@@ -327,94 +327,64 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 .footer-inner{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
-/* Nav */
-.nav-links{display:none!important;flex-direction:column;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(10,12,16,.98);padding:24px;gap:8px;overflow-y:auto;z-index:9999;backdrop-filter:blur(20px)}
-.nav-links.open{display:flex!important;flex-direction:column}
+.nav-links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;bottom:0;background:var(--bg);padding:24px;gap:4px;overflow-y:auto}
+.nav-links.open{display:flex}
 .nav-mobile{display:block}
-.nav-link{padding:14px 16px;font-size:16px;border-bottom:1px solid var(--border);width:100%;color:var(--t1)}
-.nav-cta{display:block;width:100%;text-align:center;margin:8px 0 4px;padding:14px 24px;border-radius:10px;margin-left:0;font-size:15px}
-.nav-login{display:block;width:100%;text-align:center;margin:4px 0;padding:14px 24px;border-radius:10px;margin-left:0;font-size:15px}
-/* Hero */
-.hero{min-height:auto;padding:100px 20px 48px}
-.hero h1{font-size:clamp(32px,8vw,48px)}
-.hero-sub{font-size:15px;max-width:100%}
-.hero-actions{flex-direction:column;align-items:stretch;gap:10px}
-.hero-actions .btn-p,.hero-actions .btn-s{width:100%;text-align:center;padding:14px 20px}
-.hero-badge{font-size:10.5px;padding:6px 14px}
-/* Carousel — the key fix */
-.carousel-wrap{overflow:visible}
-.carousel-track{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;gap:12px;cursor:default;padding-bottom:4px}
-.carousel-track::-webkit-scrollbar{display:none}
-.c-card{flex:0 0 85vw!important;max-width:340px;scroll-snap-align:start;opacity:1!important;transform:none!important}
-.carousel-arrows{display:none}
-.carousel-nav{justify-content:center}
-/* Mockup */
-.hero-mockup::before{display:none}
-.win{border-radius:10px}
-.win-bar{padding:10px 14px}
-.win-body{padding:12px}
-.win-url{display:none}
-.db-greeting{font-size:16px}
-.db-stats{grid-template-columns:repeat(2,1fr)}
-.db-stat-n{font-size:14px}
-.db-stat-l{font-size:7.5px}
-/* Sections */
-.sec{padding:48px 0}
-.sec-inner{padding:0 16px}
-.sec-title{font-size:clamp(26px,7vw,38px)}
-.sec-desc{font-size:14px;max-width:100%}
-.sec-label{font-size:10px}
-.sec-grid{grid-template-columns:1fr;gap:32px}
-/* Grids */
+.hero{min-height:auto;padding-top:100px;padding-bottom:48px}
 .segments{grid-template-columns:1fr}
-.pillars{grid-template-columns:1fr}
-.pillar{padding:24px 18px}
-.p-title{font-size:22px}
-.p-desc{font-size:12.5px}
 .cta-form{grid-template-columns:1fr}
-.footer-inner{grid-template-columns:1fr;gap:32px}
-.footer-bottom{flex-direction:column;gap:8px;text-align:center}
-/* CTA / Pricing */
-.cta-card{padding:28px 20px;border-radius:14px}
-.cta-price{font-size:52px}
-.cta-price span{font-size:20px}
-.cta-trust{gap:12px}
-.cta-trust span{font-size:10.5px}
-/* Sticky bar */
-.sticky-bar{flex-direction:column;gap:10px;text-align:center;padding:12px 16px}
-.sticky-bar .btn-p{width:100%}
-.sticky-bar-text{font-size:13px}
-.sticky-bar-text span{display:block;margin-left:0;margin-top:2px}
-/* Tables */
-.rep-table,.cmp-table{font-size:10px;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.rep-table th,.rep-table td,.cmp-table th,.cmp-table td{padding:8px 6px;white-space:nowrap}
-/* Cards in non-carousel contexts */
-.c-card[style*="flex:none"]{width:100%!important}
-/* SMS / chat */
-.bubble{max-width:92%;font-size:11.5px}
-.sms-h{padding:10px 14px}
-.sms-body{padding:10px 14px}
-.feat-row{font-size:13px}
-.seg{padding:20px 16px}
-.seg-n{font-size:24px}
-.ticker-item{font-size:11px}
+.hero-actions{flex-direction:column;align-items:stretch}
+.footer-inner{grid-template-columns:1fr}
+.sticky-bar{flex-direction:column;gap:10px;text-align:center}
+.rep-table,.cmp-table{font-size:11px}
+.rep-table th,.rep-table td,.cmp-table th,.cmp-table td{padding:8px 6px}
 }
-/* Small phones */
+
+/* MOBILE NAV LINKS */
+@media(max-width:768px){
+.nav-links .nav-link,.nav-links .nl{display:block !important;width:100%;padding:16px 20px !important;font-size:18px !important;font-weight:600 !important;color:var(--wh) !important;border-bottom:1px solid var(--border);border-radius:0 !important;background:transparent !important}
+.nav-links .nav-cta{width:100%;text-align:center;margin:12px 0 0 0 !important;padding:16px !important;font-size:16px !important}
+.nav-links a[href*="app.bytotalagent"]{display:block !important;width:100%;padding:16px 20px !important;font-size:18px !important;font-weight:600 !important;color:var(--or) !important;border-bottom:1px solid var(--border);text-align:left}
+}
+/* MOBILE FIXES */
+@media(max-width:768px){
+.hero-inner{grid-template-columns:1fr !important;gap:32px !important}
+.hero-mockup .win{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.hero h1{font-size:42px !important}
+.sec-grid,.sg{grid-template-columns:1fr !important;gap:32px !important}
+.pills{grid-template-columns:1fr !important}
+.segs{grid-template-columns:1fr !important}
+.cta-form{grid-template-columns:1fr !important}
+.hero-actions{flex-direction:column !important;align-items:stretch !important}
+.foot-inner{grid-template-columns:1fr !important}
+.sticky{flex-direction:column !important;gap:8px !important;text-align:center !important;padding:12px 20px !important}
+.sec,.cta-sec{padding-left:16px !important;padding-right:16px !important}
+.hero{padding-left:16px !important;padding-right:16px !important;padding-top:90px !important;min-height:auto !important}
+.nav{padding:0 16px !important}
+.nav-m{display:block !important}
+.carousel-wrap .c-card,.cw .cc{flex:0 0 calc(100vw - 48px) !important;min-width:calc(100vw - 48px) !important}
+.carousel-track,.ct{gap:12px !important}
+.sec-title,.sh{font-size:clamp(28px,8vw,48px) !important}
+.sec-label,.sl{font-size:10px !important}
+.sec-desc,.sd{font-size:14px !important}
+.feat-row,.fr{font-size:13px !important}
+.p-sys,.ps{font-size:11.5px !important}
+.rep-table,.rtbl,.cmp-table,.ctbl{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:11px !important}
+.rep-table th,.rep-table td,.rtbl th,.rtbl td{padding:10px 12px !important;white-space:nowrap}
+.cmp-table th,.cmp-table td,.ctbl th,.ctbl td{padding:8px 6px !important;white-space:nowrap}
+.foot{padding:40px 16px 24px !important}
+.ticker{display:none !important}
+.hero-pills{display:none !important}
+.hero-meta{font-size:12px !important}
+.hero-badge{font-size:10px !important;padding:6px 14px !important}
+.hero-sub{font-size:15px !important}
+.sec-inner,.si{overflow-x:hidden}
+}
 @media(max-width:480px){
-.nav{height:60px;padding:0 12px}
-.nav-fulllogo{height:26px}
-.nav-links{top:60px!important}
-.hero{padding-top:76px}
-.hero h1{font-size:clamp(28px,8vw,40px)}
-.sec-title{font-size:clamp(24px,7vw,32px)}
-.sec{padding:40px 0}
-.sec-inner{padding:0 12px}
-.c-card{flex:0 0 90vw!important}
-.cta-card{padding:24px 16px}
-.cta-price{font-size:44px}
-.pillar{padding:20px 14px}
-.win-body{padding:10px}
-.footer{padding:48px 12px 24px}
+.hero h1{font-size:36px !important}
+.sec-title,.sh{font-size:28px !important}
+.nav-fulllogo{height:28px !important}
+.carousel-wrap .c-card,.cw .cc{flex:0 0 calc(100vw - 32px) !important;min-width:calc(100vw - 32px) !important}
 }
 </style>
 </head>
@@ -434,6 +404,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 <span class="nav-link" onclick="goTo('intelligence')">Intelligence</span>
 <span class="nav-link" onclick="goTo('compare')">Compare</span>
 <span class="nav-link" onclick="goTo('about')">About</span>
+<a href="https://app.bytotalagent.com" target="_blank" style="font-size:13px;font-weight:600;color:#FFFFFF;background:#22C55E;padding:10px 22px;border-radius:8px;cursor:pointer;text-decoration:none;transition:all .25s;margin-left:6px">Log In</a>
 <span class="nav-cta" onclick="goTo('pricing')">Reserve Spot →</span>
 </div>
 <button class="nav-mobile" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
@@ -2704,27 +2675,17 @@ nav.appendChild(dotsWrap);
 nav.appendChild(arrowsWrap);
 wrap.appendChild(nav);
 
-const isMobile = () => window.innerWidth <= 768;
-
 function goToSlide(i) {
 pos = i;
-if (isMobile()) {
-// On mobile, scroll to card instead of transforming
-const scrollTo = pos * (cards[0].offsetWidth + gap);
-track.scrollTo({ left: scrollTo, behavior: 'smooth' });
-} else {
 track.style.transform = `translateX(-${pos * getCardW()}px)`;
-}
 dotsWrap.querySelectorAll('.carousel-dot').forEach((d, idx) => {
 d.classList.toggle('active', idx === pos);
 });
-// Highlight active card (skip on mobile — CSS handles it)
-if (!isMobile()) {
+// Highlight active card
 cards.forEach((c, idx) => {
 c.style.opacity = idx === pos ? '1' : '.55';
 c.style.transform = idx === pos ? 'translateY(-4px)' : 'translateY(0)';
 });
-}
 }
 
 // Set initial state
