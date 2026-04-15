@@ -419,6 +419,11 @@ table th,table td{padding:8px 10px!important;white-space:nowrap!important;font-s
 /* PAGE STACKING */
 .page,.pg{position:relative;z-index:1}
 .sticky-bar,.sticky{z-index:100!important}
+
+/* BROKERAGE PAGE MOBILE */
+#page-brokerages .brok-compare-grid{grid-template-columns:1fr!important}
+#page-brokerages .brok-tier-row{grid-template-columns:1fr!important}
+#page-brokerages .brok-stat-grid{grid-template-columns:repeat(2,1fr)!important}
 }
 
 @media(max-width:480px){
@@ -451,6 +456,7 @@ div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
 <span class="nav-link" onclick="goTo('transactions')">Transactions</span>
 <span class="nav-link" onclick="goTo('intelligence')">Intelligence</span>
 <span class="nav-link" onclick="goTo('compare')">Compare</span>
+<span class="nav-link" onclick="goTo('brokerages')">Brokerages</span>
 <span class="nav-link" onclick="goTo('about')">About</span>
 <a href="https://app.bytotalagent.com" target="_blank" style="font-size:13px;font-weight:600;color:#FFFFFF;background:#22C55E;padding:10px 22px;border-radius:8px;cursor:pointer;text-decoration:none;transition:all .25s;margin-left:6px">Log In</a>
 <span class="nav-cta" onclick="goTo('pricing')">Reserve Spot →</span>
@@ -471,6 +477,7 @@ div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
 <a href="#" onclick="goTo('transactions');document.getElementById('mobileMenu').style.display='none';document.body.style.overflow='';return false" style="display:block;padding:18px 24px;font-size:18px;font-weight:600;color:#FFFFFF;border-bottom:1px solid #1E2130;cursor:pointer">Transactions</a>
 <a href="#" onclick="goTo('intelligence');document.getElementById('mobileMenu').style.display='none';document.body.style.overflow='';return false" style="display:block;padding:18px 24px;font-size:18px;font-weight:600;color:#FFFFFF;border-bottom:1px solid #1E2130;cursor:pointer">Intelligence</a>
 <a href="#" onclick="goTo('compare');document.getElementById('mobileMenu').style.display='none';document.body.style.overflow='';return false" style="display:block;padding:18px 24px;font-size:18px;font-weight:600;color:#FFFFFF;border-bottom:1px solid #1E2130;cursor:pointer">Compare</a>
+<a href="#" onclick="goTo('brokerages');document.getElementById('mobileMenu').style.display='none';document.body.style.overflow='';return false" style="display:block;padding:18px 24px;font-size:18px;font-weight:600;color:#FFFFFF;border-bottom:1px solid #1E2130;cursor:pointer">Brokerages</a>
 <a href="#" onclick="goTo('about');document.getElementById('mobileMenu').style.display='none';document.body.style.overflow='';return false" style="display:block;padding:18px 24px;font-size:18px;font-weight:600;color:#FFFFFF;border-bottom:1px solid #1E2130;cursor:pointer">About</a>
 <a href="https://app.bytotalagent.com" target="_blank" style="display:block;padding:18px 24px;font-size:18px;font-weight:600;color:#22C55E;border-bottom:1px solid #1E2130;text-decoration:none;cursor:pointer">Log In →</a>
 </div>
@@ -2630,6 +2637,230 @@ Hi Jennifer — just wanted to check in! I saw a couple new listings hit the mar
 </div>
 
 
+<!-- ══ BROKERAGES PAGE ══ -->
+<div class="page" id="page-brokerages">
+
+<!-- HERO -->
+<section class="sec" style="padding-top:120px;text-align:center">
+<div class="sec-inner">
+<div class="sec-label" style="text-align:center">TOTAL AGENT FOR BROKERAGES</div>
+<div class="sec-title" style="text-align:center;margin:0 auto 16px">Your compliance.<br><em>Handled.</em><br>Your agents? Upgraded.</div>
+<p class="sec-desc" style="text-align:center;margin:0 auto 48px;max-width:640px">DealFlow&trade; gives your brokerage AI-powered compliance at a fraction of what you pay today. Every agent gets access to the full platform — and can upgrade themselves.</p>
+</div>
+</section>
+
+<!-- SECTION 1: What You're Paying Today -->
+<section class="sec" style="padding-top:0">
+<div class="sec-inner">
+<div class="sec-label" style="text-align:center">THE REAL COST OF COMPLIANCE</div>
+<div class="sec-title" style="text-align:center;margin:0 auto 12px;font-size:clamp(28px,3.5vw,48px)">What you&rsquo;re paying today</div>
+<p class="sec-desc" style="text-align:center;margin:0 auto 40px;max-width:560px">For a 200-agent office, compliance costs add up fast. Here&rsquo;s how DealFlow&trade; compares.</p>
+
+<div class="brok-compare-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto">
+<!-- Traditional -->
+<div style="background:var(--bg2);border:2px solid #EF4444;border-radius:16px;padding:28px 24px;position:relative">
+<div style="position:absolute;top:-12px;left:24px;background:#EF4444;color:#fff;font-size:10px;font-weight:700;padding:4px 12px;border-radius:6px;text-transform:uppercase;letter-spacing:.08em">Traditional Compliance</div>
+<div style="margin-top:8px">
+<div style="font-family:var(--head);font-size:14px;font-weight:700;color:var(--white);margin-bottom:16px">200-Agent Office</div>
+<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px">
+<div style="display:flex;justify-content:space-between;align-items:center;font-size:13px">
+<span style="color:var(--t2)">Dotloop / SkySlope</span>
+<span style="color:var(--white);font-weight:600">$6,000<span style="color:var(--t3);font-weight:400">/mo</span></span>
+</div>
+<div style="font-size:11px;color:var(--t3);margin-top:-8px">~$30/agent &times; 200 agents</div>
+<div style="display:flex;justify-content:space-between;align-items:center;font-size:13px">
+<span style="color:var(--t2)">Compliance Staff (2 people)</span>
+<span style="color:var(--white);font-weight:600">$6,000–$12,000<span style="color:var(--t3);font-weight:400">/mo</span></span>
+</div>
+<div style="height:1px;background:var(--border);margin:4px 0"></div>
+<div style="display:flex;justify-content:space-between;align-items:center;font-size:15px">
+<span style="color:var(--white);font-weight:700">Total</span>
+<span style="color:#EF4444;font-family:var(--head);font-weight:800;font-size:18px">$12,000–$18,000<span style="color:var(--t3);font-size:13px;font-weight:400">/mo</span></span>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;font-size:11.5px;color:var(--t3)">
+<div style="display:flex;align-items:center;gap:6px"><span style="color:#EF4444">✕</span> Missed deadlines</div>
+<div style="display:flex;align-items:center;gap:6px"><span style="color:#EF4444">✕</span> Manual tracking</div>
+<div style="display:flex;align-items:center;gap:6px"><span style="color:#EF4444">✕</span> No AI scanning</div>
+</div>
+</div>
+</div>
+
+<!-- Total Agent DealFlow -->
+<div style="background:var(--bg2);border:2px solid var(--green);border-radius:16px;padding:28px 24px;position:relative">
+<div style="position:absolute;top:-12px;left:24px;background:var(--green);color:#fff;font-size:10px;font-weight:700;padding:4px 12px;border-radius:6px;text-transform:uppercase;letter-spacing:.08em">Total Agent DealFlow&trade;</div>
+<div style="margin-top:8px">
+<div style="font-family:var(--head);font-size:14px;font-weight:700;color:var(--white);margin-bottom:16px">200-Agent Office</div>
+<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px">
+<div style="display:flex;justify-content:space-between;align-items:center;font-size:13px">
+<span style="color:var(--t2)">DealFlow&trade; Tier 4 (200–349)</span>
+<span style="color:var(--green);font-weight:600;font-family:var(--head);font-size:18px">$8,750<span style="color:var(--t3);font-size:13px;font-weight:400">/mo</span></span>
+</div>
+<div style="font-size:11px;color:var(--t3);margin-top:-8px">Flat rate — no per-agent fees within tier</div>
+<div style="height:1px;background:var(--border);margin:4px 0"></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--t1);line-height:1.5">
+<div style="display:flex;align-items:flex-start;gap:6px"><span style="color:var(--green);flex-shrink:0">✔</span> ARIA&trade; scans every contract in ~30 seconds</div>
+<div style="display:flex;align-items:flex-start;gap:6px"><span style="color:var(--green);flex-shrink:0">✔</span> Automated deadline tracking + compliance flags</div>
+<div style="display:flex;align-items:flex-start;gap:6px"><span style="color:var(--green);flex-shrink:0">✔</span> Agents can upgrade to full platform at $395/agent — that revenue offsets your cost</div>
+</div>
+<div style="margin-top:16px;padding:10px 14px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.15);border-radius:8px;font-size:12.5px;color:var(--green);font-weight:600;text-align:center">Your agents pay for themselves.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SECTION 2: Brokerage Pricing Tiers -->
+<section class="sec" style="padding-top:0">
+<div class="sec-inner">
+<div class="sec-label" style="text-align:center">BROKERAGE PRICING</div>
+<div class="sec-title" style="text-align:center;margin:0 auto 12px;font-size:clamp(28px,3.5vw,48px)">DealFlow&trade; Compliance Base</div>
+<p class="sec-desc" style="text-align:center;margin:0 auto 40px;max-width:560px">Flat-rate tiers that scale with your office. Overflow pricing if you grow past your tier cap — or auto-upgrade to the next tier when it&rsquo;s cheaper.</p>
+
+<div style="max-width:960px;margin:0 auto">
+<!-- Tier Card Container -->
+<div style="background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden">
+<div style="font-family:var(--head);font-weight:700;font-size:16px;padding:16px 24px;background:var(--bg3);border-bottom:1px solid rgba(255,255,255,.06)">DealFlow&trade; Brokerage Tiers</div>
+
+<!-- Row 1 -->
+<div class="brok-tier-row" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06)">
+<!-- Tier 1 -->
+<div style="background:var(--bg2);padding:20px 24px">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--t3);margin-bottom:6px">TIER 1 &middot; 25–49 AGENTS</div>
+<div style="font-family:var(--head);font-weight:800;font-size:22px;letter-spacing:-0.5px;margin-bottom:8px;color:var(--white)">$2,000<span style="font-size:12px;color:var(--t3)">/mo flat</span></div>
+<div style="font-size:11.5px;color:var(--t2);line-height:1.6">+$40/agent past 49</div>
+</div>
+<!-- Tier 2 -->
+<div style="background:var(--bg2);padding:20px 24px">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--t3);margin-bottom:6px">TIER 2 &middot; 50–99 AGENTS</div>
+<div style="font-family:var(--head);font-weight:800;font-size:22px;letter-spacing:-0.5px;margin-bottom:8px;color:var(--white)">$3,500<span style="font-size:12px;color:var(--t3)">/mo flat</span></div>
+<div style="font-size:11.5px;color:var(--t2);line-height:1.6">+$35/agent past 99</div>
+</div>
+<!-- Tier 3 (Featured) -->
+<div style="background:linear-gradient(180deg,rgba(255,92,53,.03),transparent);border:1px solid rgba(255,92,53,.15);padding:20px 24px">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--orange);margin-bottom:6px">&#9733; TIER 3 &middot; 100–199 AGENTS</div>
+<div style="font-family:var(--head);font-weight:800;font-size:22px;letter-spacing:-0.5px;margin-bottom:8px;color:var(--orange)">$6,000<span style="font-size:12px;color:var(--t3)">/mo flat</span></div>
+<div style="font-size:11.5px;color:var(--t2);line-height:1.6">+$30/agent past 199</div>
+</div>
+</div>
+
+<!-- Row 2 -->
+<div class="brok-tier-row" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);margin-top:1px">
+<!-- Tier 4 -->
+<div style="background:var(--bg2);padding:20px 24px">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--t3);margin-bottom:6px">TIER 4 &middot; 200–349 AGENTS</div>
+<div style="font-family:var(--head);font-weight:800;font-size:22px;letter-spacing:-0.5px;margin-bottom:8px;color:var(--white)">$8,750<span style="font-size:12px;color:var(--t3)">/mo flat</span></div>
+<div style="font-size:11.5px;color:var(--t2);line-height:1.6">+$25/agent past 349</div>
+</div>
+<!-- Tier 5 -->
+<div style="background:var(--bg2);padding:20px 24px">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--t3);margin-bottom:6px">TIER 5 &middot; 350–499 AGENTS</div>
+<div style="font-family:var(--head);font-weight:800;font-size:22px;letter-spacing:-0.5px;margin-bottom:8px;color:var(--white)">$10,000<span style="font-size:12px;color:var(--t3)">/mo flat</span></div>
+<div style="font-size:11.5px;color:var(--t2);line-height:1.6">+$20/agent past 499</div>
+</div>
+<!-- Tier 6 -->
+<div style="background:var(--bg2);padding:20px 24px">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--t3);margin-bottom:6px">TIER 6 &middot; 500+ AGENTS</div>
+<div style="font-family:var(--head);font-weight:800;font-size:22px;letter-spacing:-0.5px;margin-bottom:8px;color:var(--white)">Custom</div>
+<div style="font-size:11.5px;color:var(--t2);line-height:1.6">Contact us for enterprise pricing</div>
+</div>
+</div>
+
+</div><!-- end tier card container -->
+
+<div style="text-align:center;margin-top:16px;font-size:12.5px;color:var(--t2)">We always give you the cheapest rate — automatically.</div>
+</div>
+</div>
+</section>
+
+<!-- SECTION 3: Interactive Pricing Slider -->
+<section class="sec" style="padding-top:0">
+<div class="sec-inner">
+<div style="max-width:960px;margin:0 auto">
+<div style="background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px 28px">
+<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--t3);margin-bottom:14px">DRAG TO SEE YOUR BROKERAGE PRICING</div>
+<input type="range" id="brok-slider" min="25" max="550" value="100" style="width:100%;accent-color:var(--orange);cursor:pointer;height:6px">
+<div class="brok-stat-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px">
+<div style="background:var(--bg3);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px;text-align:center">
+<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t3);margin-bottom:4px">AGENTS</div>
+<div id="brok-agents" style="font-family:var(--head);font-weight:800;font-size:22px;color:var(--orange)">100</div>
+</div>
+<div style="background:var(--bg3);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px;text-align:center">
+<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t3);margin-bottom:4px">MONTHLY</div>
+<div id="brok-monthly" style="font-family:var(--head);font-weight:800;font-size:22px;color:var(--green)">$6,000</div>
+</div>
+<div style="background:var(--bg3);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px;text-align:center">
+<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t3);margin-bottom:4px">PER AGENT</div>
+<div id="brok-per" style="font-family:var(--head);font-weight:800;font-size:22px;color:var(--white)">$60</div>
+</div>
+<div style="background:var(--bg3);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px;text-align:center">
+<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t3);margin-bottom:4px">ANNUAL</div>
+<div id="brok-annual" style="font-family:var(--head);font-weight:800;font-size:22px;color:var(--white)">$72,000</div>
+</div>
+</div>
+<div id="brok-bracket" style="font-size:11px;color:var(--t2);margin-top:10px;text-align:center">Tier 3 — 100–199 agents — $6,000/mo flat</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SECTION 4: Every Agent Sees the Full Platform -->
+<section class="sec" style="padding-top:0">
+<div class="sec-inner" style="max-width:800px;margin:0 auto;text-align:center">
+<div class="sec-label" style="text-align:center">BUILT-IN AGENT UPGRADE PATH</div>
+<div class="sec-title" style="text-align:center;margin:0 auto 16px;font-size:clamp(28px,3.5vw,48px)">Every agent sees<br><em>the full platform</em></div>
+<p style="font-size:15px;color:var(--t2);line-height:1.7;max-width:680px;margin:0 auto">When your agents log in for compliance, they see ShowingSync&trade;, CommandCenter&trade;, and the complete Total Agent platform — locked but visible. Any agent can upgrade to the full platform at <strong style="color:var(--white)">$395/agent/mo</strong> — a brokerage-exclusive rate vs $495 retail. It&rsquo;s a recruiting and retention advantage you can market to your agents.</p>
+<div style="display:flex;gap:12px;justify-content:center;margin-top:32px;flex-wrap:wrap">
+<div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 20px;text-align:center">
+<div style="font-family:var(--head);font-size:20px;font-weight:800;color:var(--orange)">$395</div>
+<div style="font-size:11px;color:var(--t3);margin-top:2px">Brokerage agent rate</div>
+</div>
+<div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 20px;text-align:center">
+<div style="font-family:var(--head);font-size:20px;font-weight:800;color:var(--t3);text-decoration:line-through">$495</div>
+<div style="font-size:11px;color:var(--t3);margin-top:2px">Standard retail rate</div>
+</div>
+<div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 20px;text-align:center">
+<div style="font-family:var(--head);font-size:20px;font-weight:800;color:var(--green)">$100</div>
+<div style="font-size:11px;color:var(--t3);margin-top:2px">Savings per agent/mo</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SECTION 5: Intake Form -->
+<section class="sec" style="padding-top:0">
+<div class="sec-inner" style="max-width:640px;margin:0 auto;text-align:center">
+<div class="sec-label" style="text-align:center">GET STARTED</div>
+<div class="sec-title" style="text-align:center;margin:0 auto 16px;font-size:clamp(24px,3vw,40px)">Ready to get started?<br><em>Tell us about your brokerage.</em></div>
+<p class="sec-desc" style="text-align:center;margin:0 auto 32px">We&rsquo;ll build a custom plan based on your office size and get you live within days.</p>
+
+<div class="cta-card" style="text-align:left">
+<div class="cta-form">
+<input type="text" id="brok-fname" placeholder="First name">
+<input type="text" id="brok-lname" placeholder="Last name">
+<input type="email" id="brok-email" placeholder="Email address">
+<input type="tel" id="brok-phone" placeholder="Phone number" class="phone-fmt">
+<input type="text" id="brok-brokname" placeholder="Brokerage name" style="grid-column:1/-1">
+<select id="brok-size" style="grid-column:1/-1;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 16px;color:var(--white);font-size:14px;font-family:var(--body);outline:none;transition:border-color .2s;cursor:pointer">
+<option value="" disabled selected style="color:var(--t3)">How many agents?</option>
+<option value="25-49">25–49 agents</option>
+<option value="50-99">50–99 agents</option>
+<option value="100-199">100–199 agents</option>
+<option value="200-349">200–349 agents</option>
+<option value="350-499">350–499 agents</option>
+<option value="500+">500+ agents</option>
+</select>
+<button class="cta-form-btn" onclick="submitBrokForm()" style="grid-column:1/-1">Request a Custom Quote →</button>
+</div>
+<div class="cta-fine" style="text-align:center">No commitment. We&rsquo;ll reach out within 24 hours.</div>
+</div>
+</div>
+</section>
+
+</div><!-- end page-brokerages -->
+
+
 <!-- ══ FOOTER ══ -->
 <footer class="footer">
 <div class="footer-inner">
@@ -2860,6 +3091,145 @@ const target = document.querySelector(link.getAttribute('href'));
 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 });
+
+// ── BROKERAGE PRICING SLIDER ──
+(function() {
+  var slider = document.getElementById('brok-slider');
+  if (!slider) return;
+
+  var tiers = [
+    { min: 25, max: 49, flat: 2000, overflow: 40, cap: 49, label: 'Tier 1 — 25–49 agents' },
+    { min: 50, max: 99, flat: 3500, overflow: 35, cap: 99, label: 'Tier 2 — 50–99 agents' },
+    { min: 100, max: 199, flat: 6000, overflow: 30, cap: 199, label: 'Tier 3 — 100–199 agents' },
+    { min: 200, max: 349, flat: 8750, overflow: 25, cap: 349, label: 'Tier 4 — 200–349 agents' },
+    { min: 350, max: 499, flat: 10000, overflow: 20, cap: 499, label: 'Tier 5 — 350–499 agents' },
+    { min: 500, max: 9999, flat: 0, overflow: 0, cap: 9999, label: 'Tier 6 — 500+ agents' }
+  ];
+
+  function fmt(n) { return '$' + n.toLocaleString(); }
+
+  function calc() {
+    var n = parseInt(slider.value);
+    var elAgents = document.getElementById('brok-agents');
+    var elMonthly = document.getElementById('brok-monthly');
+    var elPer = document.getElementById('brok-per');
+    var elAnnual = document.getElementById('brok-annual');
+    var elBracket = document.getElementById('brok-bracket');
+
+    if (n >= 500) {
+      elAgents.textContent = n;
+      elMonthly.textContent = 'Custom';
+      elPer.textContent = '—';
+      elAnnual.textContent = 'Custom';
+      elBracket.textContent = 'Tier 6 — 500+ agents — Contact us for enterprise pricing';
+      return;
+    }
+
+    // Find the best (cheapest) option
+    var bestCost = Infinity;
+    var bestTier = null;
+    var bestLabel = '';
+
+    for (var i = 0; i < tiers.length - 1; i++) {
+      var t = tiers[i];
+      if (n < t.min) continue;
+
+      var cost;
+      if (n <= t.cap) {
+        cost = t.flat;
+      } else {
+        cost = t.flat + (n - t.cap) * t.overflow;
+      }
+
+      // Also check if the next tier flat is cheaper
+      if (i + 1 < tiers.length - 1) {
+        var nextFlat = tiers[i + 1].flat;
+        if (cost > nextFlat && n >= tiers[i + 1].min) continue;
+      }
+
+      if (cost < bestCost) {
+        bestCost = cost;
+        bestTier = t;
+        if (n > t.cap) {
+          bestLabel = t.label + ' — ' + fmt(t.flat) + '/mo + ' + (n - t.cap) + ' overflow at $' + t.overflow + '/agent';
+        } else {
+          bestLabel = t.label + ' — ' + fmt(t.flat) + '/mo flat';
+        }
+      }
+    }
+
+    // Double-check: always pick cheapest by also evaluating all tiers where n >= min
+    for (var j = 0; j < tiers.length - 1; j++) {
+      var tj = tiers[j];
+      if (n < tj.min) continue;
+      var cj = (n <= tj.cap) ? tj.flat : tj.flat + (n - tj.cap) * tj.overflow;
+      if (cj < bestCost) {
+        bestCost = cj;
+        bestTier = tj;
+        if (n > tj.cap) {
+          bestLabel = tj.label + ' — ' + fmt(tj.flat) + '/mo + ' + (n - tj.cap) + ' overflow at $' + tj.overflow + '/agent';
+        } else {
+          bestLabel = tj.label + ' — ' + fmt(tj.flat) + '/mo flat';
+        }
+      }
+    }
+
+    elAgents.textContent = n;
+    elMonthly.textContent = fmt(bestCost);
+    elPer.textContent = fmt(Math.round(bestCost / n));
+    elAnnual.textContent = fmt(bestCost * 12);
+    elBracket.textContent = bestLabel;
+  }
+
+  slider.addEventListener('input', calc);
+  calc();
+})();
+
+// ── BROKERAGE FORM SUBMIT ──
+function submitBrokForm() {
+  var fname = document.getElementById('brok-fname').value.trim();
+  var lname = document.getElementById('brok-lname').value.trim();
+  var email = document.getElementById('brok-email').value.trim();
+  var phone = document.getElementById('brok-phone').value.trim();
+  var brokname = document.getElementById('brok-brokname').value.trim();
+  var size = document.getElementById('brok-size').value;
+
+  if (!fname || !lname || !email || !phone || !brokname || !size) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  var btn = document.querySelector('#page-brokerages .cta-form-btn');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  fetch('https://formspree.io/f/xpwzgvqw', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      type: 'brokerage_inquiry',
+      firstName: fname,
+      lastName: lname,
+      email: email,
+      phone: phone,
+      brokerageName: brokname,
+      officeSize: size
+    })
+  }).then(function(r) {
+    if (r.ok) {
+      btn.textContent = 'Submitted! We\'ll be in touch.';
+      btn.style.background = 'var(--green)';
+    } else {
+      btn.textContent = 'Request a Custom Quote →';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again.');
+    }
+  }).catch(function() {
+    btn.textContent = 'Request a Custom Quote →';
+    btn.disabled = false;
+    alert('Network error. Please try again.');
+  });
+}
 </script>
 </body>
 </html>
