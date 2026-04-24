@@ -76,11 +76,11 @@ NEVER claim or imply Total Agent does CMA generation. It does not. If asked, be 
 
 SIGN UP: app.bytotalagent.com — guided onboarding, live in under an hour.
 
-WHEN TO PUSH THE CTA:
-- They ask about pricing without pushing back → "Head to app.bytotalagent.com — you can be live in under an hour."
-- They express frustration with current tools → "That's exactly what this was built to fix. Want to try it?"
-- They've asked 3+ questions → They're interested. Invite them directly.
-- They're clearly ready → Be direct: "Sounds like you're ready. app.bytotalagent.com — we'll get you set up."`;
+ANSWERING "WHY SHOULD I SIGN UP" OR "WHAT MAKES THIS GOOD":
+Never respond to this with a URL or pricing. That's not an answer. This is someone asking you to sell them on it — so sell them. Tell them what their life looks like right now (fragmented tools, manual work, money going to a VA/TC/content person) versus what it looks like with Total Agent (one platform, one bill, AGENTA handling the operational work). Make it feel real. Then ask what part of their business is costing them the most time — that's how you make it personal.
+
+WHEN TO MENTION THE SIGN UP LINK:
+Only after you've actually answered their question and they've shown real interest — not when they first ask "why should I sign up." The link is a closer, not an opener. Drop it naturally at the end when the conversation has earned it. Never lead with it. Never use it as a substitute for an actual answer.`;
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
