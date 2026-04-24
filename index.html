@@ -528,7 +528,7 @@ footer{background:var(--dk2);border-top:1px solid var(--db);padding:64px 0 40px}
   </div>
   <!-- STAT BAR -->
   <div class="stat-bar" style="margin-top:72px">
-    <div class="stat-item"><div class="stat-num" style="color:#2DD4BF"><span style="color:#2DD4BF">$</span>0</div><div class="stat-label">Manual texts per showing.<br>AGENTA handles every touchpoint.</div></div>
+    <div class="stat-item"><div class="stat-num" style="color:#2DD4BF">0</div><div class="stat-label">Manual texts per showing.<br>AGENTA handles every touchpoint.</div></div>
     <div class="stat-item"><div class="stat-num" style="color:#FBBF24">260</div><div class="stat-label">Unique posts per year, auto-published.<br>Written in your voice. Every one.</div></div>
     <div class="stat-item"><div class="stat-num" style="color:var(--or)">~<span style="color:var(--or)">30s</span></div><div class="stat-label">Contract scan time.<br>Every deadline. Every flag. Instantly.</div></div>
     <div class="stat-item"><div class="stat-num" style="color:var(--gl)">24<span style="color:var(--gl)">/7</span></div><div class="stat-label">Always-on AI intelligence.<br>Triple-redundant. Never sleeps.</div></div>
@@ -3058,7 +3058,7 @@ function sendCB() {
   // Build message array with history (last 6 turns)
   var msgs = CB_HISTORY.slice(-7);
 
-  fetch('https://api.anthropic.com/v1/messages', {
+  fetch('/api/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
