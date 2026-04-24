@@ -2956,7 +2956,7 @@ function applyMobileStack() {
 
 /* ── Chatbot ── */
 var cbOpen = false;
-var CB_FALLBACK = {
+var CB_FALLBACK_UNUSED = {
   'pric':   "It's $495/month, all in. No setup fee, no annual contract, cancel anytime. That's it — one price, everything included. Most agents are paying $5,000–$9,000/month for a VA, TC, content agency, and software stack. We replace all of it.",
   'cost':   "It's $495/month, all in. No setup fee, no annual contract, cancel anytime. That's it — one price, everything included. Most agents are paying $5,000–$9,000/month for a VA, TC, content agency, and software stack. We replace all of it.",
   '495':    "Yep, $495/month. Everything is included — ShowingSync, DealTracker, AGENTA Brain, 260 social posts a year, CRM, revenue tracking, all of it. No add-ons, no upsells. And if you refer another agent, you get $50/month off for as long as they're active.",
@@ -3016,15 +3016,6 @@ function cbAppend(text, role) {
   msgs.scrollTop = msgs.scrollHeight;
 }
 
-function cbFallback(input) {
-  var low = input.toLowerCase();
-  var keys = Object.keys(CB_FALLBACK);
-  for (var i = 0; i < keys.length; i++) {
-    if (low.indexOf(keys[i]) !== -1) return CB_FALLBACK[keys[i]];
-  }
-  return null;
-}
-
 var CB_HISTORY = [];
 var CB_TYPING_DELAY = 800;
 
@@ -3037,20 +3028,6 @@ function sendCB() {
   inp.value = '';
   cbAppend(text, 'usr');
   CB_HISTORY.push({ role: 'user', content: text });
-
-  // Local fallback — search all keys
-  var local = cbFallback(text);
-  if (local) {
-    // Human-like delay even for local
-    var delay = 600 + Math.random() * 800;
-    var typingEl = addTypingIndicator();
-    setTimeout(function() {
-      removeTypingIndicator(typingEl);
-      cbAppend(local, 'bot');
-      CB_HISTORY.push({ role: 'assistant', content: local });
-    }, delay);
-    return;
-  }
 
   if (btn) btn.disabled = true;
   var typingEl = addTypingIndicator();
